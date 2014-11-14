@@ -29,11 +29,11 @@
 
 //static BOOL iPad = YES;
 
-
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
+
 
 
 /*
