@@ -22,8 +22,8 @@
 
 
 enum {
-	kTagBatchNode = 555,
-	kTagBatchNode2 = 666,
+    kTagBatchNode = 555,
+    kTagBatchNode2 = 666,
 };
 
 @implementation Page1
@@ -35,31 +35,31 @@ enum {
 
 +(id) scene
 {
-	// ’scene’ is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// ’layer’ is an autorelease object.
-	Page1 *layer = [Page1 node];
-	//menuFrame *menulayer = [menuFrame node];
-	
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	//[scene addChild: menulayer];
-	
-	
-	// return the scene
-	return scene;
+    // ’scene’ is an autorelease object.
+    CCScene *scene = [CCScene node];
+    
+    // ’layer’ is an autorelease object.
+    Page1 *layer = [Page1 node];
+    //menuFrame *menulayer = [menuFrame node];
+    
+    
+    // add layer as a child to scene
+    [scene addChild: layer];
+    //[scene addChild: menulayer];
+    
+    
+    // return the scene
+    return scene;
 }
 
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init] )) {
+    // always call "super" init
+    // Apple recommends to re-assign "self" with the "super" return value
+    if( (self=[super init] )) {
         
-
+        
         
         NSError *activationError = nil;
         BOOL success = [[AVAudioSession sharedInstance] setActive: YES error: &activationError];
@@ -105,7 +105,7 @@ enum {
         // SSH
         SSh = [CCSprite spriteWithFile:@"Ssh.png"];
         SSh.position = ccp((winSize.width)/2, winSize.height/2+offsetText);
-		[self addChild:SSh z:8];
+        [self addChild:SSh z:8];
         SSh.opacity = 0;
         
         if (voicePlay || noisePlay)
@@ -117,13 +117,13 @@ enum {
         
         //PRELOAD AUDIO
         
-       /* [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-APPLE.mp3"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-BANANA.mp3"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-COWBOY.mp3"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-PIRATE.mp3"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-STRAWBERRY.mp3"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-VAMPIRE.mp3"];
-        */
+        /* [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-APPLE.mp3"];
+         [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-BANANA.mp3"];
+         [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-COWBOY.mp3"];
+         [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-PIRATE.mp3"];
+         [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-STRAWBERRY.mp3"];
+         [[SimpleAudioEngine sharedEngine] preloadEffect:@"HELLO-BABY-VAMPIRE.mp3"];
+         */
         
         
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
@@ -138,18 +138,18 @@ enum {
         
         Menu_Layer1 = [CCSprite spriteWithFile:@"MENU_layer1.png"];
         Menu_Layer1.position = ccp(900, 680-offsetMic);
-		[self addChild:Menu_Layer1 z:60];
+        [self addChild:Menu_Layer1 z:60];
         Menu_Layer1.anchorPoint = ccp(1.0f,0.5f);
         Menu_Layer1.opacity = 0;
         
         Menu_Layer2 = [CCSprite spriteWithFile:@"MENU_layer2.png"];
         Menu_Layer2.position = ccp(756, 680-offsetMic);
-		[self addChild:Menu_Layer2 z:8];
+        [self addChild:Menu_Layer2 z:8];
         Menu_Layer2.opacity = 0;
         
         Menu_Layer3 = [CCSprite spriteWithFile:@"MENU_layer3.png"];
         Menu_Layer3.position = ccp(756, 680-offsetMic);
-		[self addChild:Menu_Layer3 z:62];
+        [self addChild:Menu_Layer3 z:62];
         Menu_Layer3.opacity = 0;
         
         
@@ -157,21 +157,21 @@ enum {
         // MODE
         Mode_Voice = [CCSprite spriteWithFile:@"Conrol_Mic_Icon.png"];
         Mode_Voice.position = ccp(-200, 120+offsetMic);
-		[self addChild:Mode_Voice z:8];
+        [self addChild:Mode_Voice z:8];
         Mode_Voice.opacity = 255;
         
         Mode_Noise = [CCSprite spriteWithFile:@"Conrol_Noise_Icon.png"];
         Mode_Noise.position = ccp(-200, 120+offsetMic);
-		[self addChild:Mode_Noise z:8];
+        [self addChild:Mode_Noise z:8];
         Mode_Noise.opacity = 255;
         
         Mode_Auto = [CCSprite spriteWithFile:@"Conrol_Auto_Icon.png"];
         Mode_Auto.position = ccp(-200, 120+offsetMic);
-		[self addChild:Mode_Auto z:8];
+        [self addChild:Mode_Auto z:8];
         Mode_Auto.opacity = 255;
         
         id ModeIn = [CCMoveTo actionWithDuration:0.5 position:ccp(115,120+offsetMic)];
-		id ModeInEase = [CCEaseExponentialOut actionWithAction:ModeIn];
+        id ModeInEase = [CCEaseExponentialOut actionWithAction:ModeIn];
         
         if (automaticPlay) {
             [Mode_Auto runAction:ModeInEase];
@@ -179,47 +179,47 @@ enum {
         
         Mode_Noise_Listening = [CCSprite spriteWithFile:@"Conrol_Noise_Listening.png"];
         Mode_Noise_Listening.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Noise_Listening z:8];
+        [self addChild:Mode_Noise_Listening z:8];
         Mode_Noise_Listening.opacity = 0;
         
         Mode_Voice_Processing = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Processing.png"];
         Mode_Voice_Processing.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Processing z:8];
+        [self addChild:Mode_Voice_Processing z:8];
         Mode_Voice_Processing.opacity = 0;
         
         Mode_Voice_Apple = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Apple.png"];
         Mode_Voice_Apple.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Apple z:8];
+        [self addChild:Mode_Voice_Apple z:8];
         Mode_Voice_Apple.opacity = 0;
         
         Mode_Voice_Banana = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Banana.png"];
         Mode_Voice_Banana.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Banana z:8];
+        [self addChild:Mode_Voice_Banana z:8];
         Mode_Voice_Banana.opacity = 0;
         
         Mode_Voice_Cowboy = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Cowboy.png"];
         Mode_Voice_Cowboy.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Cowboy z:8];
+        [self addChild:Mode_Voice_Cowboy z:8];
         Mode_Voice_Cowboy.opacity = 0;
         
         Mode_Voice_Pirate = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Pirate.png"];
         Mode_Voice_Pirate.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Pirate z:8];
+        [self addChild:Mode_Voice_Pirate z:8];
         Mode_Voice_Pirate.opacity = 0;
         
         Mode_Voice_Strawberry = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Strawberry.png"];
         Mode_Voice_Strawberry.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Strawberry z:8];
+        [self addChild:Mode_Voice_Strawberry z:8];
         Mode_Voice_Strawberry.opacity = 0;
         
         Mode_Voice_Vampire = [CCSprite spriteWithFile:@"Conrol_Mic_Icon_Listening_Vampire.png"];
         Mode_Voice_Vampire.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_Voice_Vampire z:8];
+        [self addChild:Mode_Voice_Vampire z:8];
         Mode_Voice_Vampire.opacity = 0;
         
         Mode_YES = [CCSprite spriteWithFile:@"YES.png"];
         Mode_YES.position = ccp(115, 120+offsetMic);
-		[self addChild:Mode_YES z:8];
+        [self addChild:Mode_YES z:8];
         Mode_YES.opacity = 0;
         
         
@@ -227,36 +227,36 @@ enum {
         // TEXT
         Text_Apple = [CCSprite spriteWithFile:@"Text_apple.png"];
         Text_Apple.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Apple z:8];
+        [self addChild:Text_Apple z:8];
         Text_Apple.opacity = 0;
         
         Text_Strawberry = [CCSprite spriteWithFile:@"Text_strawberry.png"];
         Text_Strawberry.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Strawberry z:8];
+        [self addChild:Text_Strawberry z:8];
         Text_Strawberry.opacity = 0;
         
         Text_Banana = [CCSprite spriteWithFile:@"Text_banana.png"];
         Text_Banana.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Banana z:8];
+        [self addChild:Text_Banana z:8];
         Text_Banana.opacity = 0;
         
         Text_Cowboy = [CCSprite spriteWithFile:@"Text_cowboy.png"];
         Text_Cowboy.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Cowboy z:8];
+        [self addChild:Text_Cowboy z:8];
         Text_Cowboy.opacity = 0;
         
         Text_Pirate = [CCSprite spriteWithFile:@"Text_pirate.png"];
         Text_Pirate.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Pirate z:8];
+        [self addChild:Text_Pirate z:8];
         Text_Pirate.opacity = 0;
         
         Text_Vampire = [CCSprite spriteWithFile:@"Text_vampire.png"];
         Text_Vampire.position = ccp(512, 120+offsetText);
-		[self addChild:Text_Vampire z:8];
+        [self addChild:Text_Vampire z:8];
         Text_Vampire.opacity = 0;
         
         
-  		
+        
         
         // ADD VIDEO
         avplayer = [[AVPlayer alloc] initWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"AppleIn" ofType:@"m4v"]]];
@@ -280,8 +280,8 @@ enum {
         
         // BOX 2D
         
-		// enable accelerometer
-		//self.isAccelerometerEnabled = YES;
+        // enable accelerometer
+        //self.isAccelerometerEnabled = YES;
         
         // Create a world
         b2Vec2 gravity = b2Vec2(0.0f, -25.0f); // SPACE AROUND IPAD
@@ -289,38 +289,38 @@ enum {
         world = new b2World(gravity, doSleep);
         world->SetContinuousPhysics(true);
         
-      
+        
         // Define the ground body.
-		b2BodyDef groundBodyDef;
-		groundBodyDef.position.Set(0, 0); // bottom-left corner
+        b2BodyDef groundBodyDef;
+        groundBodyDef.position.Set(0, 0); // bottom-left corner
         groundBody = world->CreateBody(&groundBodyDef);
-		b2PolygonShape groundBox;
+        b2PolygonShape groundBox;
         
         // bottom
         //groundBox.SetAsEdge(b2Vec2(0,1.5+offsetBox2D), b2Vec2(winSize.width/PTM_RATIO,1.5+offsetBox2D));
-		//groundBody->CreateFixture(&groundBox,0);
-		
-		// top
-		//groundBox.SetAsEdge(b2Vec2(winSize.width/PTM_RATIO, winSize.height/PTM_RATIO), b2Vec2(0,winSize.height/PTM_RATIO));
-		//groundBody->CreateFixture(&groundBox,0);
-		
-		// left
-		groundBox.SetAsEdge(b2Vec2(0,900), b2Vec2(0,0));
-		groundBody->CreateFixture(&groundBox,0);
-		
-		// right
-		groundBox.SetAsEdge(b2Vec2(winSize.width/PTM_RATIO,0), b2Vec2(winSize.width/PTM_RATIO,900));
-		groundBody->CreateFixture(&groundBox,0);
+        //groundBody->CreateFixture(&groundBox,0);
+        
+        // top
+        //groundBox.SetAsEdge(b2Vec2(winSize.width/PTM_RATIO, winSize.height/PTM_RATIO), b2Vec2(0,winSize.height/PTM_RATIO));
+        //groundBody->CreateFixture(&groundBox,0);
+        
+        // left
+        groundBox.SetAsEdge(b2Vec2(0,900), b2Vec2(0,0));
+        groundBody->CreateFixture(&groundBox,0);
+        
+        // right
+        groundBox.SetAsEdge(b2Vec2(winSize.width/PTM_RATIO,0), b2Vec2(winSize.width/PTM_RATIO,900));
+        groundBody->CreateFixture(&groundBox,0);
         
         
         
         resetYet = NO;
         
         
-       
         
-	}
-	return self;
+        
+    }
+    return self;
 }
 
 - (void) onEnterTransitionDidFinish {
@@ -331,7 +331,7 @@ enum {
     [self runAction:TouchSequence];
     
     
-
+    
     // [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(touchenabled) userInfo:nil repeats:NO];
     
     [super onEnterTransitionDidFinish];
@@ -360,13 +360,13 @@ enum {
         id MenuSequence = [CCSequence actions: MenuDelay, MenufadeIn, nil];
         [Menu_Layer2 runAction:MenuSequence];
         
-
+        
     }
 }
 
 
 -(void) startPocket {
-
+    
     
     NSString *lmPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"arpa"];
     NSString *dicPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"dic"];
@@ -389,19 +389,19 @@ enum {
 
 -(void) draw
 {
-	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	// Needed states:  GL_VERTEX_ARRAY,
-	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	world->DrawDebugData();
-	
-	// restore default GL states
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    // Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+    // Needed states:  GL_VERTEX_ARRAY,
+    // Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+    glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    
+    world->DrawDebugData();
+    
+    // restore default GL states
+    glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_COLOR_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     
 }
 
@@ -428,11 +428,11 @@ enum {
     //CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
     
     batch = (CCSpriteBatchNode*) [self getChildByTag:kTagBatchNode];
-	
-	//We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
-	//just randomly picking one of the images
-	int idx = (CCRANDOM_0_1() > .5 ? 0:1);
-	int idy = (CCRANDOM_0_1() > .5 ? 0:1);
+    
+    //We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
+    //just randomly picking one of the images
+    int idx = (CCRANDOM_0_1() > .5 ? 0:1);
+    int idy = (CCRANDOM_0_1() > .5 ? 0:1);
     
     
     if (amApple || amCowboy || amPirate || amStrawberry) {
@@ -449,18 +449,18 @@ enum {
     }
     
     [batch addChild:fruitblock];
-	fruitblock.position = ccp( p.x, p.y);
+    fruitblock.position = ccp( p.x, p.y);
     
     
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
+    // Define the dynamic body.
+    //Set up a 1m squared box in the physics world
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
     
-	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
-	bodyDef.userData = fruitblock;
+    bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
+    bodyDef.userData = fruitblock;
     
-	body = world->CreateBody(&bodyDef);
+    body = world->CreateBody(&bodyDef);
     
     // Create balloon shape
     
@@ -502,29 +502,29 @@ enum {
 {
     
     batch2 = (CCSpriteBatchNode*) [self getChildByTag:kTagBatchNode2];
-	
-	//We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
-	//just randomly picking one of the images
-	int idx = (CCRANDOM_0_1() > .5 ? 0:1);
-	int idy = (CCRANDOM_0_1() > .5 ? 0:1);
+    
+    //We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
+    //just randomly picking one of the images
+    int idx = (CCRANDOM_0_1() > .5 ? 0:1);
+    int idy = (CCRANDOM_0_1() > .5 ? 0:1);
     
     letterblock = [CCSprite spriteWithBatchNode:batch2 rect:CGRectMake(200 * idx,200 * idy,200,200)];
     
     
     
     [batch2 addChild:letterblock];
-	letterblock.position = ccp( p.x, p.y);
-	
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
-	b2BodyDef bodyDef2;
-	bodyDef2.type = b2_dynamicBody;
+    letterblock.position = ccp( p.x, p.y);
     
-	bodyDef2.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
-	bodyDef2.userData = letterblock;
+    // Define the dynamic body.
+    //Set up a 1m squared box in the physics world
+    b2BodyDef bodyDef2;
+    bodyDef2.type = b2_dynamicBody;
     
-	body2 = world->CreateBody(&bodyDef2);
-	
+    bodyDef2.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
+    bodyDef2.userData = letterblock;
+    
+    body2 = world->CreateBody(&bodyDef2);
+    
     b2CircleShape circleShape2;
     circleShape2.m_radius = 90.0/PTM_RATIO;
     
@@ -600,29 +600,29 @@ enum {
     }
     
     
-  
-	//It is recommended that a fixed time step is used with Box2D for stability
-	//of the simulation, however, we are using a variable time step here.
-	//You need to make an informed choice, the following URL is useful
-	//http://gafferongames.com/game-physics/fix-your-timestep/
-	
-	int32 velocityIterations = 6;
-	int32 positionIterations = 1;
-	
-	// Instruct the world to perform a single step of simulation. It is
-	// generally best to keep the time step and iterations fixed.
+    
+    //It is recommended that a fixed time step is used with Box2D for stability
+    //of the simulation, however, we are using a variable time step here.
+    //You need to make an informed choice, the following URL is useful
+    //http://gafferongames.com/game-physics/fix-your-timestep/
+    
+    int32 velocityIterations = 6;
+    int32 positionIterations = 1;
+    
+    // Instruct the world to perform a single step of simulation. It is
+    // generally best to keep the time step and iterations fixed.
     world->Step(1.0f/60.0f, velocityIterations, positionIterations);
-	
-	//Iterate over the bodies in the physics world
-	for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
-	{
-		if (b->GetUserData() != NULL) {
-			//Synchronize the AtlasSprites position and rotation with the corresponding body
-			CCSprite *myActor = (CCSprite*)b->GetUserData();
-			myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
-			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
-		}
-	}
+    
+    //Iterate over the bodies in the physics world
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+    {
+        if (b->GetUserData() != NULL) {
+            //Synchronize the AtlasSprites position and rotation with the corresponding body
+            CCSprite *myActor = (CCSprite*)b->GetUserData();
+            myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
+            myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+        }
+    }
     
 }
 
@@ -635,74 +635,74 @@ enum {
     //[[CDAudioManager sharedManager] audioSessionResumed];
     
     [[AudioSessionManager sharedAudioSessionManager] startAudioSession];
-  
+    
     //[self.pocketsphinxController resumeRecognition];
     
     if (voicePlay) {
-
-    
-    if (amApple) {
         
-        NSString *lmPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Apple" ofType:@"arpa"];
-        NSString *dicPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Apple" ofType:@"dic"];
         
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathALL
-                                                withDictionary:dicPathALL];
+        if (amApple) {
+            
+            NSString *lmPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Apple" ofType:@"arpa"];
+            NSString *dicPathALL = [[NSBundle mainBundle] pathForResource:@"Lang_Apple" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathALL
+                                                    withDictionary:dicPathALL];
+            
+        } else if (amBanana) {
+            
+            NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"arpa"];
+            NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
+                                                    withDictionary:dicPathBanana];
+        }  else if (amCowboy) {
+            
+            NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Cowboy" ofType:@"arpa"];
+            NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Cowboy" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
+                                                    withDictionary:dicPathBanana];
+        } else if (amPirate) {
+            
+            NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Pirate" ofType:@"arpa"];
+            NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Pirate" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
+                                                    withDictionary:dicPathBanana];
+        } else if (amStrawberry) {
+            
+            NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Strawberry" ofType:@"arpa"];
+            NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Strawberry" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
+                                                    withDictionary:dicPathBanana];
+        } else if (amVampire) {
+            
+            NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Vampire" ofType:@"arpa"];
+            NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Vampire" ofType:@"dic"];
+            
+            [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
+                                                    withDictionary:dicPathBanana];
+        }
         
-    } else if (amBanana) {
-        
-        NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"arpa"];
-        NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Banana" ofType:@"dic"];
-        
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
-                                                withDictionary:dicPathBanana];
-    }  else if (amCowboy) {
-        
-        NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Cowboy" ofType:@"arpa"];
-        NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Cowboy" ofType:@"dic"];
-        
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
-                                                withDictionary:dicPathBanana];
-    } else if (amPirate) {
-        
-        NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Pirate" ofType:@"arpa"];
-        NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Pirate" ofType:@"dic"];
-        
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
-                                                withDictionary:dicPathBanana];
-    } else if (amStrawberry) {
-        
-        NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Strawberry" ofType:@"arpa"];
-        NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Strawberry" ofType:@"dic"];
-        
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
-                                                withDictionary:dicPathBanana];
-    } else if (amVampire) {
-        
-        NSString *lmPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Vampire" ofType:@"arpa"];
-        NSString *dicPathBanana = [[NSBundle mainBundle] pathForResource:@"Lang_Vampire" ofType:@"dic"];
-        
-        [self.pocketsphinxController changeLanguageModelToFile:lmPathBanana
-                                                withDictionary:dicPathBanana];
-    }
-    
     }
     
     [self.pocketsphinxController resumeRecognition];
-
+    
 }
 
 
 
 - (void) dontlisten {
     NSLog(@"DONT LISTEN");
-
+    
     dolisten = NO;
     
     [self.pocketsphinxController suspendRecognition];
     
     //[[CDAudioManager sharedManager] setResignBehavior: kAMRBStop  autoHandle:YES];
-
+    
 }
 
 
@@ -752,18 +752,18 @@ enum {
 
 
 - (PocketsphinxController *)pocketsphinxController {
-	if (pocketsphinxController == nil) {
-		pocketsphinxController = [[PocketsphinxController alloc] init];
-	}
-	return pocketsphinxController;
+    if (pocketsphinxController == nil) {
+        pocketsphinxController = [[PocketsphinxController alloc] init];
+    }
+    return pocketsphinxController;
 }
 
 // Lazily allocated OpenEarsEventsObserver.
 - (OpenEarsEventsObserver *)openEarsEventsObserver {
-	if (openEarsEventsObserver == nil) {
-		openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
-	}
-	return openEarsEventsObserver;
+    if (openEarsEventsObserver == nil) {
+        openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
+    }
+    return openEarsEventsObserver;
 }
 
 
@@ -793,18 +793,18 @@ enum {
 }
 
 /*
--(void)fadeInAudio
-{
-    
-    fruitfalling = YES;
-    
-    if (UkeLoop.volume < 0.4) {
-        UkeLoop.volume = UkeLoop.volume + 0.1;
-        [self performSelector:@selector(fadeInAudio) withObject:nil afterDelay:0.1];
-    } else {
-        UkeLoop.volume = 0.5;
-    }
-}
+ -(void)fadeInAudio
+ {
+ 
+ fruitfalling = YES;
+ 
+ if (UkeLoop.volume < 0.4) {
+ UkeLoop.volume = UkeLoop.volume + 0.1;
+ [self performSelector:@selector(fadeInAudio) withObject:nil afterDelay:0.1];
+ } else {
+ UkeLoop.volume = 0.5;
+ }
+ }
  */
 
 
@@ -941,19 +941,19 @@ enum {
     
     [self addChild:batch z:20 tag:kTagBatchNode];
     [self addChild:batch2 z:20 tag:kTagBatchNode2];
-        
+    
     [[CCDirector sharedDirector] setAnimationInterval:1.0/30];//set your fast frame rate
     
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
-        
+    
 }
 
 
 - (void) voicePlayoff {
-            
-        inAction = NO;
-        Mode_YES.opacity = 0;
-        Mode_Voice.opacity = 255;
+    
+    inAction = NO;
+    Mode_YES.opacity = 0;
+    Mode_Voice.opacity = 255;
 }
 
 -(void) noises {
@@ -962,11 +962,11 @@ enum {
         [self changeTune];
     }
     if (voicePlay) {
-    id autoPlayactionDelay = [CCDelayTime actionWithDuration:5.0];
-    id autoPlay = [CCCallFunc actionWithTarget:self selector:@selector(voicePlayoff)];
-    CCSequence *autoPlaySequence = [CCSequence actions: autoPlayactionDelay, autoPlay, nil];
-    autoPlaySequence.tag = 124;
-    [self runAction:autoPlaySequence];
+        id autoPlayactionDelay = [CCDelayTime actionWithDuration:5.0];
+        id autoPlay = [CCCallFunc actionWithTarget:self selector:@selector(voicePlayoff)];
+        CCSequence *autoPlaySequence = [CCSequence actions: autoPlayactionDelay, autoPlay, nil];
+        autoPlaySequence.tag = 124;
+        [self runAction:autoPlaySequence];
     }
 }
 
@@ -988,7 +988,7 @@ enum {
         NSLog(@"Audio Session Error");
     }
     NSLog(@"Audio Session Reconfigured");
-
+    
 }
 
 
@@ -1030,7 +1030,7 @@ enum {
         }
         
         if (automaticPlay) {
-        [self FruitTriggerInnards];
+            [self FruitTriggerInnards];
         }
         
     }
@@ -1044,7 +1044,7 @@ enum {
     CCSequence *autoPlaySequence = [CCSequence actions: autoPlayactionDelay, autoPlay, nil];
     autoPlaySequence.tag = 124;
     [self runAction:autoPlaySequence];
-
+    
 }
 
 
@@ -1054,16 +1054,16 @@ enum {
         
         if (automaticPlay) {
             
-        [self CostumeAction];
+            [self CostumeAction];
             
         }
         
         if (noisePlay || voicePlay) {
             
             [self dontlisten];
-
+            
             [self CostumeTrigger];
-
+            
         }
     }
     
@@ -1544,7 +1544,7 @@ enum {
             }
             
             [self playAudioNamed:@"HELLO-BABY-APPLE"];
-
+            
             //soundEffectID = [[SimpleAudioEngine sharedEngine] playEffect:@"HELLO-BABY-APPLE.mp3"];
             
             id autoPlayactionDelay2 = [CCDelayTime actionWithDuration:3.0];
@@ -2012,7 +2012,7 @@ enum {
 
 
 -(void)FinishedOut {
-        
+    
     [[CCDirector sharedDirector]replaceScene:[Cover scene]];
     
 }
@@ -2079,26 +2079,26 @@ enum {
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
-   
+    
     [self fadeTextAudioOut];
     //[UkeLoop stop];
-        
+    
     
     //[self reconfigureAudioForPlayingMovie];
-
+    
     
     if (noisePlay || voicePlay) {
         
         NSLog(@"GoToCover Voice or Noise");
-             
-        if (dolisten == YES) {
         
+        if (dolisten == YES) {
+            
             [self.pocketsphinxController suspendRecognition];
         }
     }
     
     NSLog(@"Suspemd pocketsphinxController");
-
+    
     
     //[[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
     
@@ -2106,7 +2106,7 @@ enum {
     
     [self stopActionByTag:124];
     
- 
+    
     
     
     Mode_YES.opacity = 0;
@@ -2127,7 +2127,7 @@ enum {
     Text_Vampire.opacity = 0;
     
     id ModeFade = [CCFadeOut actionWithDuration:0.2];
-
+    
     //id ModeOut = [CCMoveTo actionWithDuration:0.5 position:ccp(-200,120+offsetMic)];
     //id ModeOutEase = [CCEaseExponentialOut actionWithAction:ModeOut];
     
@@ -2140,7 +2140,7 @@ enum {
     }
     
     [Flurry logEvent:@"GO TO COVER"];
-        
+    
     if (inaction) {
         
         countletters = 50;
@@ -2208,19 +2208,19 @@ enum {
     CCLOG(@"Page1 %@", NSStringFromSelector(_cmd));
     
     
-	// work out where the touch point was
-	UITouch *touch = [touches anyObject];
-	CGPoint location = [touch locationInView:[touch view]];
-	location = [[CCDirector sharedDirector] convertToGL:location];
+    // work out where the touch point was
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:[touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
     
     CGRect button = CGRectMake(872, 622, 115, 115);
     
- 	if (CGRectContainsPoint(button, location)) {
+    if (CGRectContainsPoint(button, location)) {
         [self menuthrob];
         
     }
     
-	
+    
 }
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -2298,7 +2298,7 @@ enum {
     } else if (amVampire) {
         [[CCTextureCache sharedTextureCache] removeTextureForKey:@"vampire_blocks.png"];
         [[CCTextureCache sharedTextureCache] removeTextureForKey:@"V_blocks.png"];
-    } 
+    }
     
     
     [timer invalidate];
@@ -2331,7 +2331,7 @@ enum {
     world = new b2World(gravity, doSleep);
     world->SetContinuousPhysics(true);
     
- 
+    
     
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
@@ -2454,11 +2454,11 @@ enum {
 }
 
 - (void) pocketsphinxDidCompleteCalibration {
-	NSLog(@"Pocketsphinx calibration is complete.");
+    NSLog(@"Pocketsphinx calibration is complete.");
     
     [self dontlisten];
     [self performSelector:@selector(reconfigureAudioForPlayingMovie) withObject:nil afterDelay: 0.3];
-
+    
     SSh.opacity = 0;
     
     self.isTouchEnabled = YES;
@@ -2495,47 +2495,47 @@ enum {
 }
 
 - (void) pocketsphinxDidStartListening {
-	NSLog(@"Pocketsphinx is now listening.");
+    NSLog(@"Pocketsphinx is now listening.");
     
     if (!MenuHit) {
-    if (voicePlay) {
-        
-        Mode_Voice.opacity = 0;
-        Mode_Voice_Processing.opacity = 0;
-        
-        if (amApple == YES) {
+        if (voicePlay) {
             
-            Mode_Voice_Apple.opacity = 255;
+            Mode_Voice.opacity = 0;
+            Mode_Voice_Processing.opacity = 0;
             
-        } else if (amBanana == YES) {
+            if (amApple == YES) {
+                
+                Mode_Voice_Apple.opacity = 255;
+                
+            } else if (amBanana == YES) {
+                
+                Mode_Voice_Banana.opacity = 255;
+                
+            } else if (amCowboy == YES) {
+                
+                Mode_Voice_Cowboy.opacity = 255;
+                
+            } else if (amPirate == YES) {
+                
+                Mode_Voice_Pirate.opacity = 255;
+                
+            } else if (amStrawberry == YES) {
+                
+                Mode_Voice_Strawberry.opacity = 255;
+                
+            } else if (amVampire == YES) {
+                
+                Mode_Voice_Vampire.opacity = 255;
+            }
             
-            Mode_Voice_Banana.opacity = 255;
+        } else if (noisePlay) {
             
-        } else if (amCowboy == YES) {
+            Mode_Noise.opacity = 0;
             
-            Mode_Voice_Cowboy.opacity = 255;
+            Mode_Noise_Listening.opacity = 255;
             
-        } else if (amPirate == YES) {
-            
-            Mode_Voice_Pirate.opacity = 255;
-            
-        } else if (amStrawberry == YES) {
-            
-            Mode_Voice_Strawberry.opacity = 255;
-            
-        } else if (amVampire == YES) {
-            
-            Mode_Voice_Vampire.opacity = 255;
         }
         
-    } else if (noisePlay) {
-        
-        Mode_Noise.opacity = 0;
-        
-        Mode_Noise_Listening.opacity = 255;
-        
-    }
-    
     }
     
     
@@ -2629,7 +2629,7 @@ enum {
 }
 
 - (void) pocketsphinxDidDetectFinishedSpeech {
-	NSLog(@"Pocketsphinx has detected a period of silence, concluding an utterance.");
+    NSLog(@"Pocketsphinx has detected a period of silence, concluding an utterance.");
     
 }
 
@@ -2680,55 +2680,55 @@ enum {
 }
 
 /*-(void) updateIconVoice {
-    Mode_Voice.opacity = 0;
-    
-    if (amApple == YES) {
-        
-        Mode_Voice_Apple.opacity = 255;
-        
-    } else if (amBanana == YES) {
-        
-        Mode_Voice_Banana.opacity = 255;
-        
-    } else if (amCowboy == YES) {
-        
-        Mode_Voice_Cowboy.opacity = 255;
-        
-    } else if (amPirate == YES) {
-        
-        Mode_Voice_Pirate.opacity = 255;
-        
-    } else if (amStrawberry == YES) {
-        
-        Mode_Voice_Strawberry.opacity = 255;
-        
-    } else if (amVampire == YES) {
-        
-        Mode_Voice_Vampire.opacity = 255;
-        
-    }
-
-}
-
-- (void) pocketsphinxDidResumeRecognition {
-    NSLog(@"Pocketsphinx has resumed recognition.");
-    
-    if (voicePlay) {
-        
-        id updateIconDelay = [CCDelayTime actionWithDuration:0.1];
-        id updateIconPlay = [CCCallFunc actionWithTarget:self selector:@selector(updateIconVoice)];
-        CCSequence *updateIconSequence = [CCSequence actions: updateIconDelay, updateIconPlay, nil];
-        updateIconSequence.tag = 124;
-        [self runAction:updateIconSequence];
-        
-        
-    } else if (noisePlay) {
-        
-        Mode_Noise_Listening.opacity = 255;
-        Mode_Noise.opacity = 0;
-        
-    }
-}*/
+ Mode_Voice.opacity = 0;
+ 
+ if (amApple == YES) {
+ 
+ Mode_Voice_Apple.opacity = 255;
+ 
+ } else if (amBanana == YES) {
+ 
+ Mode_Voice_Banana.opacity = 255;
+ 
+ } else if (amCowboy == YES) {
+ 
+ Mode_Voice_Cowboy.opacity = 255;
+ 
+ } else if (amPirate == YES) {
+ 
+ Mode_Voice_Pirate.opacity = 255;
+ 
+ } else if (amStrawberry == YES) {
+ 
+ Mode_Voice_Strawberry.opacity = 255;
+ 
+ } else if (amVampire == YES) {
+ 
+ Mode_Voice_Vampire.opacity = 255;
+ 
+ }
+ 
+ }
+ 
+ - (void) pocketsphinxDidResumeRecognition {
+ NSLog(@"Pocketsphinx has resumed recognition.");
+ 
+ if (voicePlay) {
+ 
+ id updateIconDelay = [CCDelayTime actionWithDuration:0.1];
+ id updateIconPlay = [CCCallFunc actionWithTarget:self selector:@selector(updateIconVoice)];
+ CCSequence *updateIconSequence = [CCSequence actions: updateIconDelay, updateIconPlay, nil];
+ updateIconSequence.tag = 124;
+ [self runAction:updateIconSequence];
+ 
+ 
+ } else if (noisePlay) {
+ 
+ Mode_Noise_Listening.opacity = 255;
+ Mode_Noise.opacity = 0;
+ 
+ }
+ }*/
 
 - (void) pocketsphinxDidResumeRecognition {
     NSLog(@"Pocketsphinx has resumed recognition.");
@@ -2773,11 +2773,11 @@ enum {
 
 
 - (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
-	NSLog(@"Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
+    NSLog(@"Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
 }
 
 - (void) pocketSphinxContinuousSetupDidFail { // This can let you know that something went wrong with the recognition loop startup. Turn on OPENEARSLOGGING to learn why.
-	NSLog(@"Setting up the continuous recognition loop has failed for some reason, please turn on OpenEarsLogging to learn more.");
+    NSLog(@"Setting up the continuous recognition loop has failed for some reason, please turn on OpenEarsLogging to learn more.");
 }
 
 
@@ -2810,8 +2810,8 @@ enum {
     world = NULL;
     
     // in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
+    // in this particular example nothing needs to be released.
+    // cocos2d will automatically release all the children (Label)
     
     if (voicePlay || noisePlay) {
         
@@ -2828,12 +2828,12 @@ enum {
         CCLOG(@"Release OopenEars etc");
         
     }
-        
+    
     
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-
-	// don’t forget to call "super dealloc"
-	[super dealloc];
+    
+    // don’t forget to call "super dealloc"
+    [super dealloc];
     [[CCTextureCache sharedTextureCache] removeUnusedTextures];
     [[CCDirector sharedDirector] purgeCachedData];
     
