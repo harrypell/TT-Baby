@@ -65,7 +65,7 @@
 		292E583217200D3900DB7E9F /* Ssh.png in Resources */ = {isa = PBXBuildFile; fileRef = 292E583117200D3900DB7E9F /* Ssh.png */; };
 		29370B0717EA127B004F3748 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B0617EA127B004F3748 /* libFlurry_4.2.3.a */; };
 		29370B1117EA1463004F3748 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B1017EA1463004F3748 /* Security.framework */; };
-		29370B1717EA147A004F3748 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B1617EA147A004F3748 /* AdSupport.framework */; };
+		29370B1717EA147A004F3748 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B1617EA147A004F3748 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		29370B1D17EA238E004F3748 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B1C17EA238E004F3748 /* AdSupport.framework */; };
 		29370B1F17EA239C004F3748 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29370B1E17EA239C004F3748 /* Security.framework */; };
 		2948DBFA172AC6FD00A38499 /* vampire_blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 2948DBF9172AC6FD00A38499 /* vampire_blocks.png */; };
@@ -102,6 +102,8 @@
 		29936DA5172C336800C374DC /* Conrol_Mic_Icon_Listening_Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 29936D9F172C336800C374DC /* Conrol_Mic_Icon_Listening_Apple.png */; };
 		29936DA6172C336800C374DC /* Conrol_Mic_Icon_Listening_Strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 29936DA0172C336800C374DC /* Conrol_Mic_Icon_Listening_Strawberry.png */; };
 		29936DA8172C339500C374DC /* Conrol_Noise_Listening.png in Resources */ = {isa = PBXBuildFile; fileRef = 29936DA7172C339500C374DC /* Conrol_Noise_Listening.png */; };
+		299F8F931A1623EB00A8AD3B /* Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F8F911A1623EB00A8AD3B /* Icon_40.png */; };
+		299F8F941A1623EB00A8AD3B /* Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F8F921A1623EB00A8AD3B /* Icon_80.png */; };
 		29A1B468171EC48B00A7B04E /* Intro.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 29A1B467171EC48B00A7B04E /* Intro.m4v */; };
 		29A79492175F2B8200DC8459 /* Intro.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A79490175F2B8200DC8459 /* Intro.h */; };
 		29A79493175F2B8200DC8459 /* Intro.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29A79491175F2B8200DC8459 /* Intro.mm */; };
@@ -248,8 +250,6 @@
 		29D4B9CE171BE73E000A14C4 /* Text_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9C8171BE73E000A14C4 /* Text_orange.png */; };
 		29D4B9CF171BE73E000A14C4 /* Text_banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9C9171BE73E000A14C4 /* Text_banana.png */; };
 		29D4B9D1171BE73E000A14C4 /* Text_strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9CB171BE73E000A14C4 /* Text_strawberry.png */; };
-		29DAED2818606C3F0003510F /* Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DAED2618606C3F0003510F /* Icon_40.png */; };
-		29DAED2918606C3F0003510F /* Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DAED2718606C3F0003510F /* Icon_80.png */; };
 		29DBEBD71731C7970045C217 /* Pirate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29DBEBD61731C7970045C217 /* Pirate.mp3 */; };
 		29E4B49F173171BB004825AC /* Hello.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E4B499173171B8004825AC /* Hello.png */; };
 		29E4B4A0173171BB004825AC /* NipperClipper_Press.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E4B49A173171B8004825AC /* NipperClipper_Press.png */; };
@@ -625,6 +625,8 @@
 		29936D9F172C336800C374DC /* Conrol_Mic_Icon_Listening_Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Conrol_Mic_Icon_Listening_Apple.png; sourceTree = "<group>"; };
 		29936DA0172C336800C374DC /* Conrol_Mic_Icon_Listening_Strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Conrol_Mic_Icon_Listening_Strawberry.png; sourceTree = "<group>"; };
 		29936DA7172C339500C374DC /* Conrol_Noise_Listening.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Conrol_Noise_Listening.png; sourceTree = "<group>"; };
+		299F8F911A1623EB00A8AD3B /* Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_40.png; sourceTree = "<group>"; };
+		299F8F921A1623EB00A8AD3B /* Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_80.png; sourceTree = "<group>"; };
 		29A1B467171EC48B00A7B04E /* Intro.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.m4v; sourceTree = "<group>"; };
 		29A79490175F2B8200DC8459 /* Intro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intro.h; sourceTree = "<group>"; };
 		29A79491175F2B8200DC8459 /* Intro.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Intro.mm; sourceTree = "<group>"; };
@@ -816,8 +818,6 @@
 		29D4B9C8171BE73E000A14C4 /* Text_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_orange.png; sourceTree = "<group>"; };
 		29D4B9C9171BE73E000A14C4 /* Text_banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_banana.png; sourceTree = "<group>"; };
 		29D4B9CB171BE73E000A14C4 /* Text_strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_strawberry.png; sourceTree = "<group>"; };
-		29DAED2618606C3F0003510F /* Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_40.png; path = "../04.10 16.12.13 iPhone iOS6 /Icon_40.png"; sourceTree = "<group>"; };
-		29DAED2718606C3F0003510F /* Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_80.png; path = "../04.10 16.12.13 iPhone iOS6 /Icon_80.png"; sourceTree = "<group>"; };
 		29DBEBD61731C7970045C217 /* Pirate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pirate.mp3; sourceTree = "<group>"; };
 		29E4B499173171B8004825AC /* Hello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hello.png; sourceTree = "<group>"; };
 		29E4B49A173171B8004825AC /* NipperClipper_Press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NipperClipper_Press.png; sourceTree = "<group>"; };
@@ -1298,8 +1298,8 @@
 				2977E42A14FE8D8900C4A71D /* Icon_50.png */,
 				2977E42814FE8D8900C4A71D /* Icon_57.png */,
 				2977E42D14FE8D8900C4A71D /* Icon_58.png */,
-				29DAED2618606C3F0003510F /* Icon_40.png */,
-				29DAED2718606C3F0003510F /* Icon_80.png */,
+				299F8F911A1623EB00A8AD3B /* Icon_40.png */,
+				299F8F921A1623EB00A8AD3B /* Icon_80.png */,
 				2977E42E14FE8D8900C4A71D /* Icon_72.png */,
 				29B963F5181196CD004AA9C3 /* Icon_76.png */,
 				2963F8BD182168F00049BA8F /* Icon_100.png */,
@@ -2276,6 +2276,7 @@
 				291A4B29172981DA004EC73A /* PirateOn.m4v in Resources */,
 				291A4B2B172981EE004EC73A /* StrawberryIn.m4v in Resources */,
 				291A4B2D172981F7004EC73A /* StrawberryOutAnimation.m4v in Resources */,
+				299F8F941A1623EB00A8AD3B /* Icon_80.png in Resources */,
 				291A4B2F17298203004EC73A /* VampireAction.m4v in Resources */,
 				291A4B3117298215004EC73A /* VampireOn.m4v in Resources */,
 				291A4B331729821E004EC73A /* VampireOut.m4v in Resources */,
@@ -2317,6 +2318,7 @@
 				29B91283174C1546007E7787 /* INTRO_04_BabyBody_02.png in Resources */,
 				29B91284174C1546007E7787 /* INTRO_04_BabyBody_03.png in Resources */,
 				29B91285174C1546007E7787 /* INTRO_04_Copy.png in Resources */,
+				299F8F931A1623EB00A8AD3B /* Icon_40.png in Resources */,
 				29B91286174C1546007E7787 /* INTRO_04_iPad_01.png in Resources */,
 				29B91287174C1546007E7787 /* INTRO_04_iPad_02.png in Resources */,
 				29B91288174C1546007E7787 /* INTRO_04_Notes_01.png in Resources */,
@@ -2363,7 +2365,6 @@
 				29A794B1175FC21400DC8459 /* Lang_Strawberry.arpa in Resources */,
 				29A794B2175FC21400DC8459 /* Lang_Strawberry.dic in Resources */,
 				29A794B5175FC21B00DC8459 /* Lang_Pirate.arpa in Resources */,
-				29DAED2918606C3F0003510F /* Icon_80.png in Resources */,
 				298060A1186077570017010B /* Appirater.podspec in Resources */,
 				29A794B6175FC21B00DC8459 /* Lang_Pirate.dic in Resources */,
 				29A794B9175FC22600DC8459 /* Lang_Cowboy.arpa in Resources */,
@@ -2376,7 +2377,6 @@
 				29A794C6175FE69300DC8459 /* Laugh4.mp3 in Resources */,
 				291DDE881760C5FC001B7C6F /* UkuleleToy.mp3 in Resources */,
 				29B963F7181196CD004AA9C3 /* Icon_76.png in Resources */,
-				29DAED2818606C3F0003510F /* Icon_40.png in Resources */,
 				29B963F8181196CD004AA9C3 /* Icon_152.png in Resources */,
 				2963F891181D8CD10049BA8F /* Icon_144.png in Resources */,
 				2963F8BE182168F00049BA8F /* Icon_120.png in Resources */,
