@@ -241,16 +241,22 @@
         
         // Hello BUTTON
         
-        CCMenuItemImage *hello1 = [CCMenuItemImage itemFromNormalImage:@"Hello.png" selectedImage:@"Hello_Press.png"
-                                                                target:self selector:@selector(HelloSwipeTest)];
-        
-        
-        
-		HelloGo = [CCMenu menuWithItems:hello1, nil];
-		HelloGo.position = ccp(214, -300+offsetIcons);
-        
-        [HelloGo setOpacity: 255];
-        [self addChild:HelloGo z:20];
+        if ([languageID isEqualToString:languageID]) {
+            
+            
+        } else {
+            
+            CCMenuItemImage *hello1 = [CCMenuItemImage itemFromNormalImage:@"Hello.png" selectedImage:@"Hello_Press.png"
+                                                                    target:self selector:@selector(HelloSwipeTest)];
+            
+            HelloGo = [CCMenu menuWithItems:hello1, nil];
+            HelloGo.position = ccp(214, -300+offsetIcons);
+            
+            [HelloGo setOpacity: 255];
+            [self addChild:HelloGo z:20];
+            
+        }
+
         
   
         
