@@ -52,6 +52,16 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
         
+        // Find out what language we're in!!
+        languageID = [[NSBundle mainBundle] preferredLocalizations].firstObject;
+        dutchID = @"nl";
+        // NSLog(@"%@", languageID);
+        
+
+        
+        
+        
+        
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             offset = 0;
             //blinkOffset = 0;
@@ -106,7 +116,6 @@
         
         CCLOG(@"Cover Init Start Ignoring");
 
-        
         [[BackgroundSingleton sharedInstance] setBackgroundImageToImageNamed:@"orangeBgStart.jpg"];
         
         if (!introPlayed) {
@@ -431,9 +440,6 @@
 
 
 - (void) onEnterTransitionDidFinish {
-    
-        languageID = [[NSBundle mainBundle] preferredLocalizations].firstObject;
-        NSLog(@"%@", languageID);
         
         [self playAudioNamed:@"ukulele"];
 
@@ -494,7 +500,6 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh4.mp3"];
     
     CCLOG(@"CONTROL = YES");
-
     
     [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Control.jpg"]];
     
@@ -1117,18 +1122,20 @@
         
         // create some rectangles which are the touch sensitive areas
         
+        
+        if ([languageID isEqualToString:languageID]) {
             
-            CGRect BOX1 = CGRectMake(50,35,295,695);
-            CGRect BOX2 = CGRectMake(372,35,295,695);
-            CGRect BOX3 = CGRectMake(690,35,295,695);
-            
+            CCLOG(@"NL = YES");
+            CGRect BOX1 = CGRectMake(0,0,512,767);
+            CGRect BOX2 = CGRectMake(512,0,512,767);
+           
             if (CGRectContainsPoint(BOX1, location)) {
                 
                 [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh1.mp3"];
                 
                 [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
                 CCLOG(@"Cover Readtome Touch Disabled");
-
+                
                 [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:YES];
                 [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
                 [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
@@ -1149,7 +1156,45 @@
                 [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
                 
                 [Flurry logEvent:@"SOUND CONTROL CHOSEN"];
-
+                
+                [self Start];
+                
+            }
+            
+        } else {
+            
+            CGRect BOX1 = CGRectMake(50,35,295,695);
+            CGRect BOX2 = CGRectMake(372,35,295,695);
+            CGRect BOX3 = CGRectMake(690,35,295,695);
+            
+            if (CGRectContainsPoint(BOX1, location)) {
+                
+                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh1.mp3"];
+                
+                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+                CCLOG(@"Cover Readtome Touch Disabled");
+                
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:YES];
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
+                
+                [Flurry logEvent:@"AUTO CONTROL CHOSEN"];
+                
+                [self Start];
+                
+                
+            } else if (CGRectContainsPoint(BOX2, location)) {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh2.mp3"];
+                
+                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+                CCLOG(@"Cover Readtome Touch Disabled");
+                
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:YES];
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
+                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
+                
+                [Flurry logEvent:@"SOUND CONTROL CHOSEN"];
+                
                 [self Start];
                 
             } else if (CGRectContainsPoint(BOX3, location)) {
@@ -1167,15 +1212,11 @@
                 
                 [self Start];
                 
-                
-                
             }
-  
-        
+
+        }
         
     }
-    
-    
     
 }
 
