@@ -91,6 +91,8 @@
     int offsetInfo;
     int offesetPlay;
     int offsetControl;
+    
+    NSString *languageID;
 
 }
 

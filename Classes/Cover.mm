@@ -432,6 +432,8 @@
 
 - (void) onEnterTransitionDidFinish {
     
+        languageID = [[NSBundle mainBundle] preferredLocalizations].firstObject;
+        NSLog(@"%@", languageID);
         
         [self playAudioNamed:@"ukulele"];
 
