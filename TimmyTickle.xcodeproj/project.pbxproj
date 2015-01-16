@@ -14,6 +14,8 @@
 		0DBD72AA138FF7660053678D /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBD72A9138FF7660053678D /* title.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* scene_1AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* scene_1AppDelegate.mm */; };
+		2900D3B21A6970F600092E3F /* Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 2900D3B11A6970F600092E3F /* Icon_80.png */; };
+		2900D3B41A6970FB00092E3F /* Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 2900D3B31A6970FB00092E3F /* Icon_40.png */; };
 		290D991A1729CA840099F857 /* pirate_blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 290D99181729CA840099F857 /* pirate_blocks.png */; };
 		290D991B1729CA840099F857 /* cowboy_blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 290D99191729CA840099F857 /* cowboy_blocks.png */; };
 		290D991D1729CBDB0099F857 /* strawberry_blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 290D991C1729CBDB0099F857 /* strawberry_blocks.png */; };
@@ -248,8 +250,6 @@
 		29D4B9CE171BE73E000A14C4 /* Text_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9C8171BE73E000A14C4 /* Text_orange.png */; };
 		29D4B9CF171BE73E000A14C4 /* Text_banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9C9171BE73E000A14C4 /* Text_banana.png */; };
 		29D4B9D1171BE73E000A14C4 /* Text_strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D4B9CB171BE73E000A14C4 /* Text_strawberry.png */; };
-		29DAED2818606C3F0003510F /* Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DAED2618606C3F0003510F /* Icon_40.png */; };
-		29DAED2918606C3F0003510F /* Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DAED2718606C3F0003510F /* Icon_80.png */; };
 		29DBEBD71731C7970045C217 /* Pirate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29DBEBD61731C7970045C217 /* Pirate.mp3 */; };
 		29E4B49F173171BB004825AC /* Hello.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E4B499173171B8004825AC /* Hello.png */; };
 		29E4B4A0173171BB004825AC /* NipperClipper_Press.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E4B49A173171B8004825AC /* NipperClipper_Press.png */; };
@@ -504,6 +504,8 @@
 		1F3B9A2B0EF2145700286867 /* scene_1AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = scene_1AppDelegate.mm; sourceTree = "<group>"; };
 		1F3B9A2C0EF2145700286867 /* scene_1AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scene_1AppDelegate.h; path = Classes/scene_1AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* scene_1_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene_1_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		2900D3B11A6970F600092E3F /* Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_80.png; sourceTree = "<group>"; };
+		2900D3B31A6970FB00092E3F /* Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_40.png; sourceTree = "<group>"; };
 		290D99181729CA840099F857 /* pirate_blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pirate_blocks.png; sourceTree = "<group>"; };
 		290D99191729CA840099F857 /* cowboy_blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cowboy_blocks.png; sourceTree = "<group>"; };
 		290D991C1729CBDB0099F857 /* strawberry_blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strawberry_blocks.png; sourceTree = "<group>"; };
@@ -816,8 +818,6 @@
 		29D4B9C8171BE73E000A14C4 /* Text_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_orange.png; sourceTree = "<group>"; };
 		29D4B9C9171BE73E000A14C4 /* Text_banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_banana.png; sourceTree = "<group>"; };
 		29D4B9CB171BE73E000A14C4 /* Text_strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text_strawberry.png; sourceTree = "<group>"; };
-		29DAED2618606C3F0003510F /* Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_40.png; path = "../04.10 16.12.13 iPhone iOS6 /Icon_40.png"; sourceTree = "<group>"; };
-		29DAED2718606C3F0003510F /* Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_80.png; path = "../04.10 16.12.13 iPhone iOS6 /Icon_80.png"; sourceTree = "<group>"; };
 		29DBEBD61731C7970045C217 /* Pirate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pirate.mp3; sourceTree = "<group>"; };
 		29E4B499173171B8004825AC /* Hello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hello.png; sourceTree = "<group>"; };
 		29E4B49A173171B8004825AC /* NipperClipper_Press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NipperClipper_Press.png; sourceTree = "<group>"; };
@@ -1298,8 +1298,8 @@
 				2977E42A14FE8D8900C4A71D /* Icon_50.png */,
 				2977E42814FE8D8900C4A71D /* Icon_57.png */,
 				2977E42D14FE8D8900C4A71D /* Icon_58.png */,
-				29DAED2618606C3F0003510F /* Icon_40.png */,
-				29DAED2718606C3F0003510F /* Icon_80.png */,
+				2900D3B31A6970FB00092E3F /* Icon_40.png */,
+				2900D3B11A6970F600092E3F /* Icon_80.png */,
 				2977E42E14FE8D8900C4A71D /* Icon_72.png */,
 				29B963F5181196CD004AA9C3 /* Icon_76.png */,
 				2963F8BD182168F00049BA8F /* Icon_100.png */,
@@ -2237,6 +2237,7 @@
 				29D4B9CE171BE73E000A14C4 /* Text_orange.png in Resources */,
 				29D4B9CF171BE73E000A14C4 /* Text_banana.png in Resources */,
 				29D4B9D1171BE73E000A14C4 /* Text_strawberry.png in Resources */,
+				2900D3B21A6970F600092E3F /* Icon_80.png in Resources */,
 				29BC9A6C171D63E800C187C9 /* Text_apple.png in Resources */,
 				29BC9B02171D742D00C187C9 /* Box2DConfig.cmake in Resources */,
 				29BC9B03171D742D00C187C9 /* CMakeLists.txt in Resources */,
@@ -2278,6 +2279,7 @@
 				291A4B2D172981F7004EC73A /* StrawberryOutAnimation.m4v in Resources */,
 				291A4B2F17298203004EC73A /* VampireAction.m4v in Resources */,
 				291A4B3117298215004EC73A /* VampireOn.m4v in Resources */,
+				2900D3B41A6970FB00092E3F /* Icon_40.png in Resources */,
 				291A4B331729821E004EC73A /* VampireOut.m4v in Resources */,
 				290D991A1729CA840099F857 /* pirate_blocks.png in Resources */,
 				290D991B1729CA840099F857 /* cowboy_blocks.png in Resources */,
@@ -2363,7 +2365,6 @@
 				29A794B1175FC21400DC8459 /* Lang_Strawberry.arpa in Resources */,
 				29A794B2175FC21400DC8459 /* Lang_Strawberry.dic in Resources */,
 				29A794B5175FC21B00DC8459 /* Lang_Pirate.arpa in Resources */,
-				29DAED2918606C3F0003510F /* Icon_80.png in Resources */,
 				298060A1186077570017010B /* Appirater.podspec in Resources */,
 				29A794B6175FC21B00DC8459 /* Lang_Pirate.dic in Resources */,
 				29A794B9175FC22600DC8459 /* Lang_Cowboy.arpa in Resources */,
@@ -2376,7 +2377,6 @@
 				29A794C6175FE69300DC8459 /* Laugh4.mp3 in Resources */,
 				291DDE881760C5FC001B7C6F /* UkuleleToy.mp3 in Resources */,
 				29B963F7181196CD004AA9C3 /* Icon_76.png in Resources */,
-				29DAED2818606C3F0003510F /* Icon_40.png in Resources */,
 				29B963F8181196CD004AA9C3 /* Icon_152.png in Resources */,
 				2963F891181D8CD10049BA8F /* Icon_144.png in Resources */,
 				2963F8BE182168F00049BA8F /* Icon_120.png in Resources */,
@@ -2626,8 +2626,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = armv7;
@@ -2665,8 +2665,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "E2D015AC-53BC-4520-AFD2-DCF608D24537";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E2D015AC-53BC-4520-AFD2-DCF608D24537";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2689,8 +2689,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Harriet Pellereau (CS9GVPSBL6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Harriet Pellereau (CS9GVPSBL6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -2718,8 +2718,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "2C2A4A6A-DF49-443C-81CF-A5A51396AA4D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C2A4A6A-DF49-443C-81CF-A5A51396AA4D";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2756,8 +2756,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "E2D015AC-53BC-4520-AFD2-DCF608D24537";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E2D015AC-53BC-4520-AFD2-DCF608D24537";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2787,8 +2787,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -2799,8 +2799,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Harriet Pellereau (CS9GVPSBL6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Harriet Pellereau (CS9GVPSBL6)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -2826,8 +2826,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "2C2A4A6A-DF49-443C-81CF-A5A51396AA4D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C2A4A6A-DF49-443C-81CF-A5A51396AA4D";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2900,8 +2900,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -2931,8 +2931,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Timmy Tickle Baby";
-				PROVISIONING_PROFILE = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4962F95B-05E4-4466-BCAE-EE2ECA2FAC06";
+				PROVISIONING_PROFILE = "6472dd95-ac38-495e-8860-bd6b10129abc";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6472dd95-ac38-495e-8860-bd6b10129abc";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
