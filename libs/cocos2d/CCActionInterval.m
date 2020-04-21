@@ -439,19 +439,19 @@
 
 -(void) startWithTarget:(CCNode *)aTarget
 {
-	[super startWithTarget:aTarget];
-	
-	startAngle = [target_ rotation];
-	if (startAngle > 0)
-		startAngle = fmodf(startAngle, 360.0f);
-	else
-		startAngle = fmodf(startAngle, -360.0f);
-	
-	diffAngle = dstAngle - startAngle;
-	if (diffAngle > 180)
-		diffAngle -= 360;
-	if (diffAngle < -180)
-		diffAngle += 360;
+//    [super startWithTarget:aTarget];
+//
+//    startAngle = [target_ rotation];
+//    if (startAngle > 0)
+//        startAngle = fmodf(startAngle, 360.0f);
+//    else
+//        startAngle = fmodf(startAngle, -360.0f);
+//
+//    diffAngle = dstAngle - startAngle;
+//    if (diffAngle > 180)
+//        diffAngle -= 360;
+//    if (diffAngle < -180)
+//        diffAngle += 360;
 }
 -(void) update: (ccTime) t
 {
@@ -489,7 +489,7 @@
 -(void) startWithTarget:(id)aTarget
 {
 	[super startWithTarget:aTarget];
-	startAngle = [target_ rotation];
+//    startAngle = [target_ rotation];
 }
 
 -(void) update: (ccTime) t

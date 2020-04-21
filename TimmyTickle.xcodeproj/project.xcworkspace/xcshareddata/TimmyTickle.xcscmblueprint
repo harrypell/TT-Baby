@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C204BDEA271F7D0B5C6632A602A99AD9A6B19C91",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C204BDEA271F7D0B5C6632A602A99AD9A6B19C91" : 0,
+    "96A687B46B69F5D791FBCE37881765B55784D214" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0F39EC97-39B8-4F2A-8AB4-73618B3D0264",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C204BDEA271F7D0B5C6632A602A99AD9A6B19C91" : "TT-Baby%202018\/",
+    "96A687B46B69F5D791FBCE37881765B55784D214" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TimmyTickle",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TimmyTickle.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/harrypell\/TTB.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96A687B46B69F5D791FBCE37881765B55784D214"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/harrypell\/TT-Baby.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C204BDEA271F7D0B5C6632A602A99AD9A6B19C91"
+    }
+  ]
+}

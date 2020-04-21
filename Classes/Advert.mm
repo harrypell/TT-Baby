@@ -14,7 +14,6 @@
 #import "BackgroundSingleton.h"
 #import "Globals.h"
 
-#import "Flurry.h"
 
 
 
@@ -89,7 +88,7 @@
                         
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         
-        CCLOG(@"Cover Init Start Ignoring");
+        ////CCLOG(@"Cover Init Start Ignoring");
 
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -228,7 +227,7 @@
 
 
 - (void) touchenabled {
-    CCLOG(@"Cover Init Stop Ignoring");
+    ////CCLOG(@"Cover Init Stop Ignoring");
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     self.isTouchEnabled = YES;
 }
@@ -264,6 +263,7 @@
 - (void) onEnterTransitionDidFinish {
     
     [self playAudioNamed:@"UkuleleToy"];
+    
     
     id TouchDelay = [CCDelayTime actionWithDuration:1.0];
     id TouchPlay = [CCCallFunc actionWithTarget:self selector:@selector(touchenabled)];
@@ -320,9 +320,8 @@
     
     [self fadeTextAudioOut];
     
-    CCLOG(@"INTRO SKIPPED");
+    ////CCLOG(@"INTRO SKIPPED");
     
-    [Flurry logEvent:@"INTRO SKIPPED"];
     
     [self stopActionByTag:715];
     
@@ -749,8 +748,8 @@
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-    CCLOG(@"Avert dealloc");
-    NSLog(@"rc: %d", [Advert retainCount]);
+    ////CCLOG(@"Avert dealloc");
+    ////NSLog(@"rc: %d", [Advert retainCount]);
     
     
     [UkeLoop release];

@@ -40,12 +40,10 @@
     CGPoint firstTouch;
     CGPoint lastTouch;
     
-    BOOL voicePlay;
-    BOOL noisePlay;
     BOOL automaticPlay;
     BOOL introPlayed;
     
-    BOOL CONTROL;
+    //BOOL CONTROL;
     
     BOOL HELLO;
     
@@ -55,8 +53,7 @@
     BOOL aminfo3;
     BOOL aminfo4;
     BOOL aminfo5;
-    BOOL aminfo6;
-    
+
     CCSprite *Info; // NIPPER CLIPPER INSTRUCTIONS
     
     CCMenu *InfoBack; // BACK BUTTON

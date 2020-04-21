@@ -13,12 +13,6 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <CoreMedia/CoreMedia.h>
 
-#import <OpenEars/LanguageModelGenerator.h>
-//#import <Rejecto/LanguageModelGenerator+Rejecto.h>
-#import <OpenEars/PocketsphinxController.h>
-//#import <OpenEars/AudioSessionManager.h>
-#import <OpenEars/OpenEarsEventsObserver.h>
-#import <OpenEars/OpenEarsLogging.h>
 
 
 
@@ -40,8 +34,11 @@
 
 
 
-@interface Page1 : CCLayer <OpenEarsEventsObserverDelegate>
+@interface Page1 : CCLayer
 {
+    
+    
+
     
     BOOL MenuHit;
     BOOL TransitionOut;
@@ -53,31 +50,22 @@
     CCSprite *Menu_Layer3;
     
     
-    CCSprite *Mode_Voice;
-    CCSprite *Mode_Voice_Apple;
-    CCSprite *Mode_Voice_Banana;
-    CCSprite *Mode_Voice_Cowboy;
-    CCSprite *Mode_Voice_Pirate;
-    CCSprite *Mode_Voice_Strawberry;
-    CCSprite *Mode_Voice_Vampire;
-    CCSprite *Mode_Voice_Processing;
-    
-    CCSprite *Mode_Noise;
-    CCSprite *Mode_Noise_Listening;
+//    CCSprite *Mode_Voice;
+//    CCSprite *Mode_Voice_Apple;
+//    CCSprite *Mode_Voice_Banana;
+//    CCSprite *Mode_Voice_Cowboy;
+//    CCSprite *Mode_Voice_Pirate;
+//    CCSprite *Mode_Voice_Strawberry;
+//    CCSprite *Mode_Voice_Vampire;
+//    CCSprite *Mode_Voice_Processing;
+//    
+//    CCSprite *Mode_Noise;
+//    CCSprite *Mode_Noise_Listening;
     
     CCSprite *Mode_YES;
     
     CCSprite *Mode_Auto;
-    
-    
-    BOOL voicePlay;
-    BOOL noisePlay;
-    BOOL automaticPlay;
-    
-    PocketsphinxController *pocketsphinxController;
-    OpenEarsEventsObserver* openEarsEventsObserver;
-    
-    CCSprite *SSh;    
+      
     
     CCSprite *Text_Apple;
     CCSprite *Text_Banana;
@@ -90,7 +78,7 @@
     CCSprite *letterblock;
     
     
-	BOOL currentState;
+	int currentState;
     
     BOOL amIntro;
     BOOL amApple;
@@ -154,11 +142,6 @@
 + (id) scene;
 
 
-
-@property (nonatomic, retain) PocketsphinxController *pocketsphinxController;
-@property (nonatomic, retain) OpenEarsEventsObserver *openEarsEventsObserver;
-//@property (nonatomic, retain) AudioSessionManager *AudioSessionManager;
-//@property (nonatomic, retain) OpenEarsLogging *OpenEarsLogging;
 
 -(void) addNewSpriteWithCoords:(CGPoint)p;
 

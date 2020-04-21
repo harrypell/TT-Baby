@@ -12,11 +12,10 @@
 #import "GameConfig.h"
 #import "Intro.h"
 #import "RootViewController.h"
-#import "Appirater.h"
+
 
 #import "BackgroundSingleton.h"
 
-#import "Flurry.h"
 
 
 @implementation scene_1AppDelegate
@@ -55,15 +54,8 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
-    [Appirater setAppId:@"649383502"];
-    [Appirater setDaysUntilPrompt:2];
-    [Appirater setUsesUntilPrompt:10];
-   // [Appirater setSignificantEventsUntilPrompt:-1];
-    [Appirater setTimeBeforeReminding:4];
-    [Appirater setDebug:NO];
+
     
-    [Flurry setCrashReportingEnabled:YES];
-    [Flurry startSession:@"255Z4JXSQ58WJ8HPM9PD"];
     
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -83,7 +75,8 @@
     
 	// Init the View Controller
 	viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-	viewController.wantsFullScreenLayout = YES;
+	//viewController.wantsFullScreenLayout = YES;
+    viewController.edgesForExtendedLayout = UIRectEdgeAll;
 	
 	//
 	// Create the EAGLView manually
@@ -103,7 +96,7 @@
 	
     //	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
     //	if( ! [director enableRetinaDisplay:YES] )
-    //		CCLOG(@"Retina Display Not supported");
+    //		//CCLOG(@"Retina Display Not supported");
 	
 	//
 	// VERY IMPORTANT:
@@ -144,12 +137,12 @@
     
     if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending)
     {
-        NSLog(@"iOS 6");
+        //NSLog(@"iOS 6");
         window.rootViewController = viewController;
     }
     else
     {
-        NSLog(@"iOS Under 6");
+        //NSLog(@"iOS Under 6");
         [window addSubview: viewController.view];
         
     }
@@ -172,7 +165,6 @@
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [Intro node]];
     
-    [Appirater appLaunched:YES];
 }
 
 
@@ -196,8 +188,7 @@
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application {
-    [Appirater appEnteredForeground:YES];
-    
+
     [[CCDirector sharedDirector] startAnimation];
 }
 

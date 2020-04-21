@@ -14,7 +14,6 @@
 #import "BackgroundSingleton.h"
 #import "Globals.h"
 
-#import "Flurry.h"
 
 
 
@@ -76,8 +75,7 @@
         
 
         
-        voicePlay = [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] voicePlay];
-        noisePlay = [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] noisePlay];
+
         automaticPlay = [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] automaticPlay];
         introPlayed = [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] introPlayed];
         
@@ -86,7 +84,7 @@
         BOOL success = [[AVAudioSession sharedInstance] setActive: YES error: &activationError];
         
         if (!success) {
-            NSLog(@"Audio Session Error");
+            //NSLog(@"Audio Session Error");
         }
         
         
@@ -100,11 +98,10 @@
 		
         [CDAudioManager sharedManager].backgroundMusic.volume = 0.4f;
         
-        [Flurry logEvent:@"COVER" timed:YES];
-                
+        
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         
-        CCLOG(@"Cover Init Start Ignoring");
+        ////CCLOG(@"Cover Init Start Ignoring");
 
         
         [[BackgroundSingleton sharedInstance] setBackgroundImageToImageNamed:@"orangeBgStart.jpg"];
@@ -247,7 +244,7 @@
         
         // INFO
         
-        Info = [CCSprite spriteWithFile:@"Intructions.jpg"];
+        Info = [CCSprite spriteWithFile:@"Instructions.jpg"];
         Info.position = ccp(size.width / 2, size.height / 2+offsetInfo);
 		[self addChild:Info z:31];
 		Info.opacity = 0;
@@ -291,8 +288,7 @@
         
         infoVisible = NO;
         HELLO = NO;
-        CONTROL = NO;
-        
+
     
         
         
@@ -310,13 +306,12 @@
     
     Info.opacity = 0;
     //
-    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Intructions.jpg"]];
+    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions.jpg"]];
     
     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Apps_1.jpg"];
     
  
@@ -354,7 +349,7 @@
 
 
 - (void) touchenabled {
-    CCLOG(@"Cover Init Stop Ignoring");
+    //CCLOG(@"Cover Init Stop Ignoring");
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     self.isTouchEnabled = YES;
     
@@ -385,7 +380,7 @@
 
 - (void)startHome {
         
-    CCLOG(@"START HOME");
+    //CCLOG(@"START HOME");
         
     id titleFadeIn = [CCFadeIn actionWithDuration:0.5];
     [title runAction:titleFadeIn];
@@ -446,9 +441,9 @@
                     error: &setCategoryError];
     
         if (!success) {
-            NSLog(@"Audio Session Error");
+            //NSLog(@"Audio Session Error");
         }
-            NSLog(@"Audio Session Reconfigured");
+            //NSLog(@"Audio Session Reconfigured");
     
         
         [self startHome];
@@ -475,31 +470,39 @@
 
 - (void)STARTPLAYING {
     
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh1.mp3"];
+    
+    // from control
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    //+[(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:YES];
+
+    [self Start];
     
-    id touchDelay = [CCDelayTime actionWithDuration:0.2];
-    id touchPlay = [CCCallFunc actionWithTarget:self selector:@selector(touchenabled)];
-    CCSequence *touchSequence = [CCSequence actions: touchDelay, touchPlay, nil];
-    touchSequence.tag = 124;
-    [self runAction:touchSequence];
     
-    CONTROL = YES;
     
-    NipperClipperGo.position = ccp(-20000, -30000+offset);
-    HelloGo.position = ccp(-20000, -30000+offset);
-    PLAYGO.position = ccp(20000, -30000+offset);
+//    id touchDelay = [CCDelayTime actionWithDuration:0.2];
+//    id touchPlay = [CCCallFunc actionWithTarget:self selector:@selector(touchenabled)];
+//    CCSequence *touchSequence = [CCSequence actions: touchDelay, touchPlay, nil];
+//    touchSequence.tag = 124;
+//    [self runAction:touchSequence];
     
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh4.mp3"];
+    //+CONTROL = YES;
     
-    CCLOG(@"CONTROL = YES");
+//    NipperClipperGo.position = ccp(-20000, -30000+offset);
+//    HelloGo.position = ccp(-20000, -30000+offset);
+//    PLAYGO.position = ccp(20000, -30000+offset);
+//    
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh4.mp3"];
+    
+    //CCLOG(@"CONTROL = YES");
 
     
-    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Control.jpg"]];
+    //+[Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Control.jpg"]];
     
-    CGSize size = [[CCDirector sharedDirector] winSize];
+//    CGSize size = [[CCDirector sharedDirector] winSize];
 
-    Info.position = ccp(size.width / 2, size.height / 2+offsetControl);
-    Info.opacity = 255;
+//    Info.position = ccp(size.width / 2, size.height / 2+offsetControl);
+ //   Info.opacity = 255;
     
     //id autoPlayactionDelay = [CCDelayTime actionWithDuration:0.5];
     //id autoPlay = [CCCallFunc actionWithTarget:self selector:@selector(removewave)];
@@ -539,7 +542,6 @@
         }
         
         
-        
         id autoPlayactionDelay = [CCDelayTime actionWithDuration:1.5];
         id autoPlay = [CCCallFunc actionWithTarget:self selector:@selector(nextScene)];
         CCSequence *autoPlaySequence = [CCSequence actions: autoPlayactionDelay, autoPlay, nil];
@@ -554,17 +556,15 @@
 
 
 - (void) InfoSwipeTest {
-    
-    if (!CONTROL) {
+
     
     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
     
     INFOSWIPE = YES;
         
-        CCLOG(@"INFOSWIPE = YES");
+        //CCLOG(@"INFOSWIPE = YES");
 
-    
-    srandom(time(NULL));
+    srand( static_cast<unsigned int>(time(NULL)));
     NSUInteger newState = (CCRANDOM_0_1() * 4) + 0.5;
     switch (newState) {
         case kSwipeLeft:
@@ -590,7 +590,8 @@
     }
     
     
-    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Intructions.jpg"]];
+    
+    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions.jpg"]];
     
     Info.opacity   = 255;
     
@@ -601,7 +602,7 @@
     NipperClipperGo.position = ccp(2000, -3000+offset);
     HelloGo.position = ccp(2000, -3000+offset);
     PLAYGO.position = ccp(2000, -3000+offset);
-    }
+    
 }
 
 
@@ -637,13 +638,12 @@
 
 - (void) HelloSwipeTest {
     
-    if (!CONTROL) {
     
     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
     
     MORESWIPE = YES;
     
-    CCLOG(@"MORESWIPE = YES");
+    //CCLOG(@"MORESWIPE = YES");
 
     
     srandom(time(NULL));
@@ -683,7 +683,7 @@
     NipperClipperGo.position = ccp(2000, -3000+offset);
     HelloGo.position = ccp(2000, -3000+offset);
     PLAYGO.position = ccp(2000, -3000+offset);
-    }
+    
     
 }
 
@@ -696,7 +696,7 @@
     
     HELLO = YES;
     
-    CCLOG(@"HELLO = YES");
+    //CCLOG(@"HELLO = YES");
     
     
     // MOVE BACK BUTTON ONSTAGE
@@ -720,9 +720,9 @@
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    if (!CONTROL) {
+
         
-        CCLOG(@"TOUCHES BEGAN SWIPE");
+        //CCLOG(@"TOUCHES BEGAN SWIPE");
         
     if(swipeLeft || swipeRight || swipeUp || swipeDown) {
         NSSet *allTouches = [event allTouches];
@@ -734,13 +734,13 @@
         firstTouch = location;
         
         }
-    }
+    
 	
-    //CCLOG(@"Cover %@", NSStringFromSelector(_cmd));
+    ////CCLOG(@"Cover %@", NSStringFromSelector(_cmd));
     
     
     
-    if (HELLO && !CONTROL) {
+    if (HELLO) {
         UITouch *touch = [touches anyObject];
         CGPoint location = [touch locationInView:[touch view]];
         location = [[CCDirector sharedDirector] convertToGL:location];
@@ -749,14 +749,18 @@
         
         if (CGRectContainsPoint(BUY, location)) {
             
-            CCLOG(@"BUY");
+            //CCLOG(@"BUY");
             
             
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                 
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nimblebean.com/TimmyTickleBaby_iPAD.html"]];
+                //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/gb/timmy-tickle/id448479949?mt=8"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/gb/app/timmy-tickle/id448479949?ls=1"]];
+
                 [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-                [Flurry logEvent:@"BUY iPAD"];
+                
+                
+                
                 
                 /*
                  NSString *iTunesLink = @"http://itunes.apple.com/gb/timmy-tickle/id448479949?mt=8";
@@ -767,16 +771,15 @@
                 
             } else {
                 
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nimblebean.com/TimmyTickleBaby_iPHONE.html"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/gb/app/timmy-tickle/id448479949?ls=1"]];
                 [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-                [Flurry logEvent:@"BUY iPHONE"];
             }
         }
     }
      
-    if (infoVisible && !CONTROL) {
+    if (infoVisible) {
         
-        CCLOG(@"INTFO");
+        //CCLOG(@"INTFO");
 
         UITouch *touch = [touches anyObject];
         CGPoint location = [touch locationInView:[touch view]];
@@ -787,7 +790,7 @@
         CGRect SLIDE3 = CGRectMake(519,606,113,113);
         CGRect SLIDE4 = CGRectMake(632,606,113,113);
         CGRect SLIDE5 = CGRectMake(745,606,113,113);
-        CGRect SLIDE6 = CGRectMake(858,606,113,113);
+
         
 
         
@@ -798,14 +801,13 @@
             
             
             if (CGRectContainsPoint(BUY, location)) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nimblebean.com/Timmy_Tickle_Baby_BuyClipper.html"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://styltom.co.uk/collections/all-products/products/stylfile-nipper-clipper-baby-nail-clipper-with-safety-spy-hole"]];
                 [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-                [Flurry logEvent:@"BUY NIPPER CLIPPER LINK"];
             }
             
             if (CGRectContainsPoint(NEXT, location)) {
                 
-                NSLog(@"Instructions_2");
+                //NSLog(@"Instructions_2");
                 
                 [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
                 
@@ -818,19 +820,18 @@
                 
                 [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_2.jpg"]];
                 
-                [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Intructions.jpg"];
+                [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions.jpg"];
                 //[[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
                 [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
                 [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
                 [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-                [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
                 
                 aminfo1 = NO;
                 aminfo2 = YES;
                 aminfo3 = NO;
                 aminfo4 = NO;
                 aminfo5 = NO;
-                aminfo6 = NO;
+
             }
         } else if (!aminfo1) {
             CGRect NEXT2 = CGRectMake(91,80,841,506);
@@ -838,7 +839,7 @@
             if (aminfo2) {
                 if (CGRectContainsPoint(NEXT2, location)) {
                     
-                    NSLog(@"Instructions_3");
+                    //NSLog(@"Instructions_3");
                     
                     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
                     
@@ -850,24 +851,23 @@
                     [self runAction:TouchSequence];
                     
                     [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_3.jpg"]];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Intructions.jpg"];
+                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
                     //[[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
                     
                     aminfo1 = NO;
                     aminfo2 = NO;
                     aminfo3 = YES;
                     aminfo4 = NO;
                     aminfo5 = NO;
-                    aminfo6 = NO;
+
                 }
             } else if (aminfo3) {
                 if (CGRectContainsPoint(NEXT2, location)) {
                     
-                    NSLog(@"Instructions_4");
+                    //NSLog(@"Instructions_4");
                     
                     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
                     
@@ -879,24 +879,23 @@
                     [self runAction:TouchSequence];
                     
                     [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_4.jpg"]];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Intructions.jpg"];
+                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
                     //[[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
                     
                     aminfo1 = NO;
                     aminfo2 = NO;
                     aminfo3 = NO;
                     aminfo4 = YES;
                     aminfo5 = NO;
-                    aminfo6 = NO;
+
                 }
             } else if (aminfo4) {
                 if (CGRectContainsPoint(NEXT2, location)) {
                     
-                    NSLog(@"Instructions_5");
+                    //NSLog(@"Instructions_5");
                     
                     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
                     
@@ -908,24 +907,23 @@
                     [self runAction:TouchSequence];
                     
                     [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_5.jpg"]];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Intructions.jpg"];
+                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
                     [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
                     //[[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
                     
                     aminfo1 = NO;
                     aminfo2 = NO;
                     aminfo3 = NO;
                     aminfo4 = NO;
                     aminfo5 = YES;
-                    aminfo6 = NO;
+
                 }
-            } else if (aminfo5) {
+            }  else if (aminfo5) {
                 if (CGRectContainsPoint(NEXT2, location)) {
                     
-                    NSLog(@"Instructions_6");
+                    //NSLog(@"Instructions");
                     
                     [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
                     
@@ -936,43 +934,14 @@
                     CCSequence *TouchSequence = [CCSequence actions: TouchDelay, TouchPlay, nil];
                     [self runAction:TouchSequence];
                     
-                    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_6.jpg"]];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Intructions.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_2.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_3.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_4.jpg"];
-                    [[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_5.jpg"];
-                    //[[CCTextureCache sharedTextureCache] removeTextureForKey:@"Instructions_6.jpg"];
-                    
-                    aminfo1 = NO;
-                    aminfo2 = NO;
-                    aminfo3 = NO;
-                    aminfo4 = NO;
-                    aminfo5 = NO;
-                    aminfo6 = YES;
-                }
-            }  else if (aminfo6) {
-                if (CGRectContainsPoint(NEXT2, location)) {
-                    
-                    NSLog(@"Instructions");
-                    
-                    [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
-                    
-                    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                    
-                    id TouchDelay = [CCDelayTime actionWithDuration:0.1];
-                    id TouchPlay = [CCCallFunc actionWithTarget:self selector:@selector(touchenabled)];
-                    CCSequence *TouchSequence = [CCSequence actions: TouchDelay, TouchPlay, nil];
-                    [self runAction:TouchSequence];
-                    
-                    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Intructions.jpg"]];
+                    [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions.jpg"]];
                     
                     aminfo1 = YES;
                     aminfo2 = NO;
                     aminfo3 = NO;
                     aminfo4 = NO;
                     aminfo5 = NO;
-                    aminfo6 = NO;
+
                 }
             }
             
@@ -997,14 +966,14 @@
             [self runAction:TouchSequence];
             
             
-            [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Intructions.jpg"]];
+            [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions.jpg"]];
             
             aminfo1 = YES;
             aminfo2 = NO;
             aminfo3 = NO;
             aminfo4 = NO;
             aminfo5 = NO;
-            aminfo6 = NO;
+
             
             
         } else if (CGRectContainsPoint(SLIDE2, location)) {
@@ -1024,7 +993,6 @@
             aminfo3 = NO;
             aminfo4 = NO;
             aminfo5 = NO;
-            aminfo6 = NO;
             
         } else if (CGRectContainsPoint(SLIDE3, location)) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
@@ -1043,7 +1011,7 @@
             aminfo3 = YES;
             aminfo4 = NO;
             aminfo5 = NO;
-            aminfo6 = NO;
+
             
         } else if (CGRectContainsPoint(SLIDE4, location)) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
@@ -1062,7 +1030,7 @@
             aminfo3 = NO;
             aminfo4 = YES;
             aminfo5 = NO;
-            aminfo6 = NO;
+
             
         } else if (CGRectContainsPoint(SLIDE5, location)) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
@@ -1081,97 +1049,75 @@
             aminfo3 = NO;
             aminfo4 = NO;
             aminfo5 = YES;
-            aminfo6 = NO;
-            
-        } else if (CGRectContainsPoint(SLIDE6, location)) {
-            [[SimpleAudioEngine sharedEngine] playEffect:@"plop3.mp3"];
-            
-            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-            
-            id TouchDelay = [CCDelayTime actionWithDuration:0.1];
-            id TouchPlay = [CCCallFunc actionWithTarget:self selector:@selector(touchenabled)];
-            CCSequence *TouchSequence = [CCSequence actions: TouchDelay, TouchPlay, nil];
-            [self runAction:TouchSequence];
-            
-            [Info setTexture:[[CCTextureCache sharedTextureCache] addImage:@"Instructions_6.jpg"]];
-            
-            aminfo1 = NO;
-            aminfo2 = NO;
-            aminfo3 = NO;
-            aminfo4 = NO;
-            aminfo5 = NO;
-            aminfo6 = YES;
+
             
         }
         
     }
     
     
-    if (CONTROL) {
+    //+if (CONTROL) {
         // work out where the touch point was
-        UITouch *touch = [touches anyObject];
-        CGPoint location = [touch locationInView:[touch view]];
-        location = [[CCDirector sharedDirector] convertToGL:location];
-        
-        // create some rectangles which are the touch sensitive areas
-        
-            
-            CGRect BOX1 = CGRectMake(50,35,295,695);
-            CGRect BOX2 = CGRectMake(372,35,295,695);
-            CGRect BOX3 = CGRectMake(690,35,295,695);
-            
-            if (CGRectContainsPoint(BOX1, location)) {
-                
-                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh1.mp3"];
-                
-                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                CCLOG(@"Cover Readtome Touch Disabled");
-
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:YES];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
-                
-                [Flurry logEvent:@"AUTO CONTROL CHOSEN"];
-                
-                [self Start];
-                
-                
-            } else if (CGRectContainsPoint(BOX2, location)) {
-                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh2.mp3"];
-                
-                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                CCLOG(@"Cover Readtome Touch Disabled");
-                
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:YES];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
-                
-                [Flurry logEvent:@"SOUND CONTROL CHOSEN"];
-
-                [self Start];
-                
-            } else if (CGRectContainsPoint(BOX3, location)) {
-                
-                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh3.mp3"];
-                
-                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                CCLOG(@"Cover Readtome Touch Disabled");
-                
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:YES];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
-                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
-                
-                [Flurry logEvent:@"VOICE CONTROL CHOSEN"];
-                
-                [self Start];
-                
-                
-                
-            }
-  
-        
-        
-    }
+//        UITouch *touch = [touches anyObject];
+//        CGPoint location = [touch locationInView:[touch view]];
+//        location = [[CCDirector sharedDirector] convertToGL:location];
+//        
+//        // create some rectangles which are the touch sensitive areas
+//        
+//            
+//            CGRect BOX1 = CGRectMake(50,35,295,695);
+//            CGRect BOX2 = CGRectMake(372,35,295,695);
+//            CGRect BOX3 = CGRectMake(690,35,295,695);
+//            
+//            if (CGRectContainsPoint(BOX1, location)) {
+//                
+//                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh1.mp3"];
+//                
+//                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+//                //CCLOG(@"Cover Readtome Touch Disabled");
+//
+//                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:YES];
+//                //+[(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
+//                //+[(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
+//                
+//                
+//                [self Start];
+//                
+//                
+//            } else if (CGRectContainsPoint(BOX2, location)) {
+//                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh2.mp3"];
+//                
+//                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+//                //CCLOG(@"Cover Readtome Touch Disabled");
+//                
+//                //+[(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:YES];
+//                //+[(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:NO];
+//                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
+//                
+//
+//                [self Start];
+//                
+//            } else if (CGRectContainsPoint(BOX3, location)) {
+//                
+//                [[SimpleAudioEngine sharedEngine] playEffect:@"Laugh3.mp3"];
+//                
+//                [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+//                //CCLOG(@"Cover Readtome Touch Disabled");
+//                
+//                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setVoicePlay:YES];
+//                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setNoisePlay:NO];
+//                [(scene_1AppDelegate *)[[UIApplication sharedApplication] delegate] setAutomaticPlay:NO];
+//                
+//                
+//                [self Start];
+//                
+//                
+//                
+//            }
+//  
+//        
+//        
+//    }
     
     
     
@@ -1180,9 +1126,6 @@
 
 -(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    if (!CONTROL) {
-        
-        CCLOG(@"TOUCHES ENDED !CONTROL");
 
         if (swipeLeft || swipeRight || swipeUp || swipeDown) {
         NSSet *allTouches = [event allTouches];
@@ -1199,7 +1142,7 @@
         if (swipeLeft) {
             
             if (firstTouch.x > lastTouch.x && swipeLength > 30) {
-                NSLog(@"Swipe left");
+                //NSLog(@"Swipe left");
                 
                 if (MORESWIPE) {
                     MORESWIPE = NO;
@@ -1233,7 +1176,7 @@
             
             if (lastTouch.x > firstTouch.x && swipeLength > 30) {
                 
-                NSLog(@"Swipe Right");
+                //NSLog(@"Swipe Right");
                 if (MORESWIPE) {
                     MORESWIPE = NO;
                     [self Hello];
@@ -1265,7 +1208,7 @@
             
             if (lastTouch.y > firstTouch.y && swipeLength > 30) {
                 
-                NSLog(@"Swipe Up");
+                //NSLog(@"Swipe Up");
                 
                 if (MORESWIPE) {
                     MORESWIPE = NO;
@@ -1299,7 +1242,7 @@
             
             if (firstTouch.y > lastTouch.y && swipeLength > 30) {
                 
-                NSLog(@"Swipe Down");
+                //NSLog(@"Swipe Down");
                 
                 if (MORESWIPE) {
                     MORESWIPE = NO;
@@ -1331,7 +1274,7 @@
         }
     }
     
-    }}
+    }
 
 
 
@@ -1359,8 +1302,8 @@
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-    CCLOG(@"Cover dealloc");
-    NSLog(@"rc: %d", [Cover retainCount]);
+    ////CCLOG(@"Cover dealloc");
+    ////NSLog(@"rc: %d", [Cover retainCount]);
     
     
     // REMOVE AVPLAYER LAYERS FOR THIS SCENE

@@ -12,7 +12,6 @@
 #import "scene_1AppDelegate.h"
 #import "BackgroundSingleton.h"
 #import "Globals.h"
-//#import "Flurry.h"
 
 
 
@@ -109,8 +108,8 @@
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-    CCLOG(@"Intro dealloc");
-    NSLog(@"rc: %d", [Intro retainCount]);
+    //CCLOG(@"Intro dealloc");
+    //NSLog(@"rc: %d", [Intro retainCount]);
     
     
     // REMOVE AVPLAYER LAYERS FOR THIS SCENE
